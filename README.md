@@ -2,8 +2,6 @@
 
 # 介绍
 一款node版本的图片鉴黄服务
-<br>
-<hr>
 二次开发源码来自：https://gitee.com/xiaoz_xiansen/nsfwjs-img-check
 
 <br>
