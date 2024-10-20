@@ -76,6 +76,13 @@ const isSafeContent = predictions => {
 // 处理图片上传和检测
 app.post('/checkImg', async (req, res) => {
     try {
+        try {
+            //检查并创建tempImgs目录
+            await afs.emptyDirSync('./tempImgs');
+            console.log('清空tempImgs成功');
+        } catch (error) {
+            console.log('清空tempImgs失败');
+        }
         let form = new multiparty.Form();
         form.uploadDir = './tempImgs'; // 设置临时文件存储路径
         form.parse(req, async (err, fields, files) => {
