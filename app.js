@@ -100,8 +100,8 @@ app.post("/checkImg", async (req, res) => {
                 const { isSafe, imgType } = isSafeContent(predictions);
 
                 res.send({
-                    code: isSafe ? "0" : "1",
-                    msg: `0通过，1不通过`,
+                    code: isSafe ? "0" : "1", //0通过，1不通过
+                    msg:  isSafe ? "通过" : "图片色情，制作失败",
                 });
             } catch (error) {
                 console.error("处理图片出错：", error);
