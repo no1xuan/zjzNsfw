@@ -118,7 +118,7 @@ app.post("/checkImg", async (req, res) => {
         console.error("处理请求出错：", error);
         res.send({
             code: 1,
-            msg: "服务器内部错误",
+            msg: "系统繁忙，请稍后再试",
         });
     }
 });
