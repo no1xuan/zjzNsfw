@@ -125,7 +125,7 @@ app.post("/checkImg", async (req, res) => {
 
 // 监听端口
 app.listen(3006, () => {
-    console.log("服务启动成功，监听端口：3006");
+    console.log("启动成功，端口号：3006");
 });
 
 // 捕获未处理的异常，防止崩溃
