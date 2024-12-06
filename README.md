@@ -1,7 +1,7 @@
 # 证件照鉴黄Api端
 
 # 介绍
-一款node版本的图片鉴黄服务
+证件照图片鉴黄API端
 <br>
 二次开发源码来自：https://gitee.com/xiaoz_xiansen/nsfwjs-img-check
 
