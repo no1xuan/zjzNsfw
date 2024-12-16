@@ -25,6 +25,14 @@ const app = express();
 app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
 
+// 修改临时文件存储路径配置
+const tempImgsDir = "./tempImgs";
+
+// 确保临时文件夹存在
+if (!afs.existsSync(tempImgsDir)) {
+    afs.mkdirSync(tempImgsDir);
+}
+
 // 转换图片格式
 const convert = async (file) => {
     const image = await imgJS.Image.load(file.path);
@@ -75,7 +83,7 @@ const isSafeContent = (predictions) => {
 app.post("/checkImg", async (req, res) => {
     try {
         const form = new multiparty.Form();
-        form.uploadDir = "./tempImgs"; // 设置临时文件存储路径
+        form.uploadDir = tempImgsDir; // 使用配置的临时文件路径
 
         form.parse(req, async (err, fields, files) => {
             if (err || !files || !files.file[0]) {
