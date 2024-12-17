@@ -33,3 +33,20 @@ yarn start
 ```js
 启动成功，端口号：3006
 ```
+
+# Docker 部署说明
+
+## 构建镜像
+```bash
+docker build -t checkimg-api .
+```
+
+## 运行容器
+```bash
+docker run -d -p 3006:3006 --name checkimg-api checkimg-api
+```
+
+## 查看容器日志
+```bash
+docker logs checkimg-api
+```
